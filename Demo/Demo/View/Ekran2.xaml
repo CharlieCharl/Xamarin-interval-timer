@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Demo.View.Ekran2">
+
+<StackLayout> 
+   <Label></Label>
+    <StackLayout.BackgroundColor>
+                <OnPlatform x:TypeArguments="Color"
+                                        Android="Teal"
+                                        WinPhone="Teal"
+                                        iOS="White"></OnPlatform>
+        </StackLayout.BackgroundColor>
+  <Label></Label>
+<Label Text="Zaprojektuj swój trening"  HorizontalOptions="Center" 
+       VerticalOptions="Center" FontSize="Large">
+      <Label.TextColor>
+                <OnPlatform x:TypeArguments="Color"
+                                        Android="White"
+                                        WinPhone="White"
+                                        iOS="Black"></OnPlatform>
+        </Label.TextColor> </Label>
+<Grid VerticalOptions="CenterAndExpand">
+   <Grid.BackgroundColor>
+                <OnPlatform x:TypeArguments="Color"
+                                        Android="Teal"
+                                        WinPhone="Teal"
+                                        iOS="White"></OnPlatform>
+        </Grid.BackgroundColor>
+   <Grid.RowDefinitions>
+   <RowDefinition>
+            <RowDefinition.Height>
+                <OnPlatform x:TypeArguments="GridLength" iOS="60" Android="60*" WinPhone="100" />
+            </RowDefinition.Height>
+   </RowDefinition>
+   <RowDefinition>
+            <RowDefinition.Height>
+                <OnPlatform x:TypeArguments="GridLength" iOS="60" Android="60*" WinPhone="100" />
+            </RowDefinition.Height>
+   </RowDefinition>
+   <RowDefinition>
+            <RowDefinition.Height>
+                <OnPlatform x:TypeArguments="GridLength" iOS="60" Android="60*" WinPhone="100" />
+            </RowDefinition.Height>
+  </RowDefinition>
+  </Grid.RowDefinitions>
+  <Grid.ColumnDefinitions>
+    <ColumnDefinition Width="100" />
+    <ColumnDefinition Width="*" />
+    <ColumnDefinition Width="*"/>
+    <ColumnDefinition Width="100" />
+ </Grid.ColumnDefinitions>
+  
+   <Button Text="—" Grid.Row="0" Grid.Column="0" Command="{Binding ButtonZmniejszSerie}"
+           FontSize="32" FontAttributes="Bold"/>
+   <Label Text="Liczba serii:" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="0" Grid.Column="1"/>
+   <Label Text="{Binding LiczbaSerii,StringFormat='{0}'}" HorizontalOptions="Center" VerticalOptions="Center"
+          Grid.Row="0" Grid.Column="2"/>
+   <Button Text="+" Grid.Row="0" Grid.Column="3" Command="{Binding ButtonZwiekszSerie}" FontSize="22"
+           FontAttributes="Bold"/>
+  
+   <Button Text="—" Grid.Row="1" Grid.Column="0" Command="{Binding ButtonZmniejszPrace}" FontSize="32"
+           FontAttributes="Bold"/>
+   <Label Text="Czas pracy[s]:" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Grid.Column="1"/>
+   <Label Text="{Binding CzasPracysek,StringFormat='{0}'}" HorizontalOptions="Center" VerticalOptions="Center"
+          Grid.Row="1" Grid.Column="2"/>
+   <Button Text="+" Grid.Row="1" Grid.Column="3" Command="{Binding ButtonZwiekszPrace}" FontSize="22"
+           FontAttributes="Bold"/>
+
+      <Button Text="—" Grid.Row="2" Grid.Column="0" Command="{Binding ButtonZmniejszOdpoczynek}" FontSize="32"
+              FontAttributes="Bold"/>
+      <Label Text="Czas przerwy[s]:" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="2"
+             Grid.Column="1"/>
+      <Label Text="{Binding CzasOdpoczynkuSek,StringFormat='{0}'}" HorizontalOptions="Center"
+             VerticalOptions="Center" Grid.Row="2" Grid.Column="2"/>
+      <Button Text="+" Grid.Row="2" Grid.Column="3" Command="{Binding ButtonZwiekszOdpoczynek}"
+              FontSize="22" FontAttributes="Bold"/>
+   </Grid>
+  <Button Text="Pomoc" Command="{Binding ButtonPomoc}"/>
+  <Button Text="START" Command="{Binding NastepnaStrona}" />
+</StackLayout>
+</ContentPage>

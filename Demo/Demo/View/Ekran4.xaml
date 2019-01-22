@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Demo.View.ekran4"
+ BackgroundColor="{Binding Kolor}">
+  
+  <Grid VerticalOptions="CenterAndExpand">
+
+    <Grid.RowDefinitions>
+      <RowDefinition>
+        <RowDefinition.Height>
+          <OnPlatform x:TypeArguments="GridLength"
+                              iOS="60"
+                              Android="50*"
+                              WinPhone="100" />
+        </RowDefinition.Height>
+      </RowDefinition>
+      <RowDefinition>
+        <RowDefinition.Height>
+          <OnPlatform x:TypeArguments="GridLength"
+                              iOS="*"
+                              Android="150"
+                              WinPhone="*" />
+        </RowDefinition.Height>
+      </RowDefinition>
+
+      <RowDefinition>
+        <RowDefinition.Height>
+          <OnPlatform x:TypeArguments="GridLength"
+                              iOS="*"
+                              Android="250"
+                              WinPhone="*" />
+        </RowDefinition.Height>
+      </RowDefinition>
+      <RowDefinition>
+        <RowDefinition.Height>
+          <OnPlatform x:TypeArguments="GridLength"
+                              iOS="*"
+                              Android="40"
+                              WinPhone="*" />
+        </RowDefinition.Height>
+      </RowDefinition>
+      <RowDefinition>
+        <RowDefinition.Height>
+          <OnPlatform x:TypeArguments="GridLength"
+                              iOS="*"
+                              Android="50"
+                              WinPhone="*" />
+        </RowDefinition.Height>
+      </RowDefinition>
+      
+      <RowDefinition>
+        <RowDefinition.Height>
+          <OnPlatform x:TypeArguments="GridLength"
+                              iOS="60"
+                              Android="50"
+                              WinPhone="100" />
+        </RowDefinition.Height>
+      </RowDefinition>
+      <RowDefinition>
+        <RowDefinition.Height>
+          <OnPlatform x:TypeArguments="GridLength"
+                              iOS="60"
+                              Android="30"
+                              WinPhone="100" />
+        </RowDefinition.Height>
+      </RowDefinition>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="80" />
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="80" />
+    </Grid.ColumnDefinitions>
+
+    <Label Text="Trening zakończony" FontSize="32" TextColor="Black" Grid.Row="1" Grid.Column="1" IsVisible="{Binding widocznoscKoniec}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+    <Label Text="WORK" FontSize="40" TextColor="Black" Grid.Row="1" Grid.Column="1" IsVisible="{Binding widocznoscPraca}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+    <Label Text="REST" FontSize="40" TextColor="Black" Grid.Row="1" Grid.Column="1" IsVisible="{Binding widocznoscOdpoczynek}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+    <Label Text="Pozostało serii" FontSize="25" TextColor="Black" Grid.Row="3" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" IsVisible="{Binding widocznoscSerie}"/>
+    <Label Text="{Binding Serie,StringFormat='{0}'}" FontSize="30" TextColor="Black" Grid.Row="4" Grid.Column="1" IsVisible="{Binding widocznoscSerie}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+    <Label Text="{Binding Praca,StringFormat='{0}'}" FontSize="100" TextColor="Black" IsVisible="{Binding widocznoscPraca}" Grid.Row="2" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+    <Label Text="{Binding Odpoczynek,StringFormat='{0}'}" FontSize="100" TextColor="Black" IsVisible="{Binding widocznoscOdpoczynek}" Grid.Row="2" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+    <Button Text="{Binding Textklawisz}" Grid.Column="1" Grid.Row="5"  Clicked="ItemClicked"/>
+    
+    
+  </Grid>
+</ContentPage>
